@@ -1,6 +1,4 @@
-# Symfony controller sketch
-
-```php
+<?php
     #[Route('/', name: 'app_method', methods: ['GET'], format: 'json')]
     public function method(): JsonResponse {
         $data = [];
@@ -16,4 +14,3 @@
             return $this->json($data, $status_code);
         }
     }
-```
