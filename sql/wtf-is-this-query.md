@@ -4,6 +4,7 @@ tags:
     - sql
     - master
 ---
+
 ```sql
 SELECT
     d_divisao.nome_divisao,
@@ -35,6 +36,9 @@ LEFT JOIN(
     WHERE
         registro_ativo = TRUE
         -- WTF: date YYYYmmdd as ID?!
+        -- NOTE: falei mal da consulta, mas ela é realizada em  0.096s,
+        --      enquanto a que eu desenvolvi é realizada em 11.059s
+                
         AND id_dim_calendario BETWEEN 20241001 - 10000 
         AND 20241031 -10000
     GROUP BY 
