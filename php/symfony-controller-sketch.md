@@ -1,10 +1,11 @@
-# Symfony Controller method sketch
+# Symfony controller sketch
 
 ```php
+    public function method(): JsonResponse {
         $data = [];
         $status_code =500;
         try {
-
+            // Internal logic
         } catch(Exception $e){
             $data = $e->getMessage();
             $status_code = array_key_exists($e->getCode, JsonResponse::$statusTexts) ?
@@ -13,4 +14,5 @@
         } finally {
             return $this->json($data, $status_code);
         }
+    }
 ```
