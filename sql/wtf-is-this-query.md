@@ -1,3 +1,10 @@
+---
+tags:
+    - wtf
+    - sql
+    - master
+---
+```sql
 SELECT
     d_divisao.nome_divisao,
     d_divisao.id_nrodivisao,
@@ -27,8 +34,8 @@ LEFT JOIN(
         fato_distribuicao_divisao_dia 
     WHERE
         registro_ativo = TRUE
-        -- ! WTF
-        AND id_dim_calendario BETWEEN 20241001 -10000 
+        -- WTF: date YYYYmmdd as ID?!
+        AND id_dim_calendario BETWEEN 20241001 - 10000 
         AND 20241031 -10000
     GROUP BY 
         id_dim_empresa,
@@ -46,3 +53,4 @@ GROUP BY
     valor_devolucao_ano_passado,
     valor_despesa_ano_passado,
     valor_promo_ano_passado
+```

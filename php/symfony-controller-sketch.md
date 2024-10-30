@@ -1,3 +1,12 @@
+---
+tags:
+    - templates
+    - apis
+    - php
+    - symfony
+    - master
+---
+```php
 <?php
     #[Route('/', name: 'app_method', methods: ['GET'], format: 'json')]
     public function method(): JsonResponse {
@@ -14,3 +23,4 @@
             return $this->json($data, $status_code);
         }
     }
+```
