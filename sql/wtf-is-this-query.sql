@@ -27,19 +27,16 @@ LEFT JOIN(
         fato_distribuicao_divisao_dia 
     WHERE
         registro_ativo = TRUE
-        -- Calendario Key recebido menos um ano
+        -- ! WTF
         AND id_dim_calendario BETWEEN 20241001 -10000 
-        -- Calendario Key recebido menos um ano
-        AND 2024-10-31 -10000
+        AND 20241031 -10000
     GROUP BY 
         id_dim_empresa,
         id_dim_divisao
     ) AS f_old ON f_old.id_dim_empresa = f.id_dim_empresa AND f_old.id_dim_divisao = f.id_dim_divisao
 WHERE
     f.registro_ativo = TRUE
-    -- Calendario Key recebido menos um ano
     AND id_dim_calendario BETWEEN 20241001
-    -- Calendario Key recebido menos um ano
     AND 20241031
 GROUP BY 
     d_divisao.nome_divisao,
