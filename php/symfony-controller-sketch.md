@@ -1,8 +1,6 @@
-# Symfony controller sketch
+# Symfony Controller method sketch
 
 ```php
-class Controller {
-    public method() {
         $data = [];
         $status_code =500;
         try {
@@ -15,6 +13,4 @@ class Controller {
         } finally {
             return $this->json($data, $status_code);
         }
-    }
-}
 ```
