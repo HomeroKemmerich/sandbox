@@ -1,7 +1,7 @@
 # Symfony controller sketch
 
 ```php
-    #[Route('/', name: 'app_method', methods: ['GET', 'POST'], format: 'json')]
+    #[Route('/', name: 'app_method', methods: ['GET'], format: 'json')]
     public function method(): JsonResponse {
         $data = [];
         $status_code =500;
